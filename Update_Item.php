@@ -1,33 +1,33 @@
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>View Monthly Sale</title>
-<?php
-<p>Welcome,$user_name</p>
-?><br><br>
-<input type="button" name="l_item" value="List Item">
-<input type="button" name="S_item" value="Search Item">
-<input type="button" name="logout" value="Logout" >
-<br><br>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Update Item</title>
+    <link rel="stylesheet" type="text/css" href="stylingpage.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
 </head>
-<style type="text/css">
-.size{width:480px;
-height:450px;}
-body{background-image:url('white-abstract-wave.jpg');
-}
-p{font-family: "Prototype";
-font-size: 30px;}
-h1{margin-top:150px;
-font-family:"Prototype";
-}
-h3{font-family:"Prototype";
-font-size:24px;}
-form{
-width:480px;
-height:450px;}
-input{margin-top:30px;}
-</style>
+
 <body>
+  <div id='cssmenu'>
+    <ul>
+       <li><a href="add_user.php"><span>Add User</span></a></li>
+       <li><a href="add_item.php"><span>Add Item</span></a></li>
+       <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
+       <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
+       <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>
+       <li class='active'><a href="Update_Item.php"><span>Update Item</span></a></li>
+       <li class='last'><a href="delete.php"><span>Delete Item</span></a></li>
+    </ul>
+  </div>
+  <br><br>
+  <input type="button" name="l_item" value="List Item">
+  <input type="button" name="S_item" value="Search Item">
+  <input type="button" name="logout" value="Logout" >
+  <br><br>
   <form  method="post" >
   Item ID:
   <input type="text" name="S_Item" maxlength="30" size="30">/
