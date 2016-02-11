@@ -29,10 +29,23 @@
   <input type="button" name="S_item" value="Search Item">
   <input type="button" name="logout" value="Logout" >
   <br><br>
-  <form  method="post" >
+  <form method="get">
   Item ID:
-  <input type="text" name="S_Item" maxlength="30" size="30">/
-  <input type="button" name="search_Item" value="Search" style="margin-right:70px;">
+  <input type="text" name="Item_ID" maxlength="30" size="30">
+  <input type="button" name="delete" value="Delete Item" style="margin-right:70px;">
+  </form>
+  <?php
 
+  if (isset($_GET['Item_ID']) && is_numeric($_GET['Item_ID']))
+    {
+    // get id value
+    $id = $_GET['Item_ID'];
+
+    // delete the entry
+    $result = mysql_query("DELETE FROM pharmacy_inventory WHERE Item_ID=$id")
+    or die(mysql_error());
+    ?>
+
+  
 </body>
 </html>
