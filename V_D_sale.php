@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylingpage.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>
+    <script language="javascript" src="calendar.js"></script>
 </head>
 <body>
   <div id='cssmenu'>
@@ -34,10 +35,14 @@
   <input type="button" name="logout" value="Logout" >
   <br><br>
   <form  method="post" >
-  Date:  <input type="text" name="day_D" maxlength="2" size="2">/
-  <input type="text" name="month_D" maxlength="2" size="2">/
+  Date:  <input type="text" name="day_D" maxlength="2" size="2"> /
+  <input type="text" name="month_D" maxlength="2" size="2"> /
   <input type="text" name="year_D" maxlength="4" size="4">
   <input type="button" name="submit_D" value="Search" style="margin-right:70px;">
+
+
+</form>
+
 
 </body>
 </html>
