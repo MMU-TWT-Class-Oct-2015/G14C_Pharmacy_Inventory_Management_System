@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset='utf-8'>
@@ -20,6 +20,9 @@
 
 
 <body>
+  <h3 class="skm">
+  Pharmacy Inventory Management System
+  </h3>
   <div id='cssmenu'>
     <ul>
        <li><a href="index_user.html"><span>Main Menu</span></a></li>
