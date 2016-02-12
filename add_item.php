@@ -27,7 +27,7 @@
       <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <br><br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
@@ -75,7 +75,7 @@
  }
 ?>
 
-
+</div>
 
 </body>
 </html>

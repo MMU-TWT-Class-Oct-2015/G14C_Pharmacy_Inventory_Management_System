@@ -28,7 +28,7 @@
       <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <br><br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
@@ -58,7 +58,7 @@
     $result = mysql_query("DELETE FROM pharmacy_inventory WHERE Item_ID=$id")
     or die(mysql_error());
     ?>
-
+</div>
 
 </body>
 </html>

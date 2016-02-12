@@ -27,7 +27,7 @@
       <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <h4>Welcome, ADMIN!</h4>
   <p1>View Daily Sales</p1>
 
@@ -46,7 +46,7 @@
 
 
 </form>
-
+</div>
 
 </body>
 </html>

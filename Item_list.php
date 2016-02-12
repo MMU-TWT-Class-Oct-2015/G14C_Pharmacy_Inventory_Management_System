@@ -28,26 +28,27 @@
        <li><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-<br><br>
-<p>Search Item</p>
-  <div>
-<?php
-$connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
-mysql_select_db('pharmacy_inventory');
+  <div class="center">
+    <br><br>
+    <p>Search Item</p>
+    <div>
+      <?php
+      $connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
+      mysql_select_db('pharmacy_inventory');
 
-  echo "<table>"; // start a table tag in the HTML
+      echo "<table>"; // start a table tag in the HTML
 
-  while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-  echo "<tr><td>" . $row['Item_Id'] . "</td><td>" . $row['Name'] . "</td><td>" . $row['Price'] . "</td><td>" . $row['Quantity'] . "</td><td>" . $row['Des'] . "</td></tr>";  //$row['index'] the index here is a field name
-  }
-
-  echo "</table>";
-mysql_close();
-?>
-</div>
-<div>
-  <p2>Please insert the item code</p2>
-<input type="text" name="Item_Id"> <input type="button" name="search" value="Search">
-</div>
+      while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
+        echo "<tr><td>" . $row['Item_Id'] . "</td><td>" . $row['Name'] . "</td><td>" . $row['Price'] . "</td><td>" . $row['Quantity'] . "</td><td>" . $row['Des'] . "</td></tr>";  //$row['index'] the index here is a field name
+      }
+      echo "</table>";
+      mysql_close();
+      ?>
+    </div>
+    <div>
+      <p2>Please insert the item code</p2>
+      <input type="text" name="Item_Id"> <input type="button" name="search" value="Search">
+    </div>
+  </div>
 </body>
 </html>

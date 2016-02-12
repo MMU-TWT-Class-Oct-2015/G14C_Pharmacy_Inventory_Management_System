@@ -27,10 +27,10 @@
        <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <h4>Welcome, ADMIN!</h4>
 <?php
-
+</div>
 ?>
 </p>
 </body>

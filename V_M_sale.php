@@ -28,7 +28,7 @@
       <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <h4>Welcome, ADMIN!</h4>
   <p1>View Daily Sales</p1>
   <br><br>
@@ -41,6 +41,6 @@
   <input type="text" name="month_D" maxlength="2" size="2">/
   <input type="text" name="year_D" maxlength="4" size="4">
   <input type="button" name="submit_D_M" value="Search" style="margin-right:70px;">
-
+</div>
 </body>
 </html>

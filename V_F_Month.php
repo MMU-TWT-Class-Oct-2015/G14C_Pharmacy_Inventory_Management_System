@@ -28,7 +28,7 @@
       <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-
+<div class="center">
   <br><br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
@@ -39,6 +39,6 @@
   <input type="text" name="month_D_F" maxlength="2" size="2">/
   <input type="text" name="year_D_F" maxlength="4" size="4">
   <input type="button" name="submit_D_F" value="Search" style="margin-right:70px;">
-
+</div>
 </body>
 </html>

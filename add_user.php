@@ -28,6 +28,7 @@
        <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
+  <div class="center">
   <br><br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
@@ -39,5 +40,6 @@
   Password: <input type="password" name="pass_create" maxlength="25" size="35"><br>
   <input type="button" name="submit" value="Create" style="margin-right:70px;">
   <input type="reset" name="reset" value="Clear" style="margin-right:70px;">
+  </div>
 </body>
 </html>

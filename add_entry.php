@@ -31,20 +31,22 @@
        <li><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
-<br><br>
-<p>Search Item</p>
+  <div class="center">
+    <br><br>
+    <p>Search Item</p>
 
-<p2>Please insert the ID of the refunded item</p2><br><input type="text" name="Item_Id"><input type="button" name="search" value="Search">
-<?php
-$connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
-mysql_select_db('pharmacy_inventory');
+    <p2>Please insert the ID of the refunded item</p2><br><input type="text" name="Item_Id"><input type="button" name="search" value="Search">
+    <?php
+    $connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
+    mysql_select_db('pharmacy_inventory');
 
 
-  while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-  echo "<tr><td>" . $row['Name'] . "</td><td>" . $row['Quantity'] . "</td></tr>";  //$row['index'] the index here is a field name
-  }
-  echo "<input type="button" name="confirm" value="Confirm">";
-mysql_close();
-?>
+    while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
+      echo "<tr><td>" . $row['Name'] . "</td><td>" . $row['Quantity'] . "</td></tr>";  //$row['index'] the index here is a field name
+    }
+    echo "<input type="button" name="confirm" value="Confirm">";
+    mysql_close();
+    ?>
+  </div>
 </body>
 </html>
