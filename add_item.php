@@ -37,6 +37,16 @@
   <input type="reset" name="reset" value="Clear" style="margin-right:70px;">
 
   <?php
+  
+	$hostname = "localhost";//host name
+	$dbname = "pharmacy_inventory";//database name
+	$username = "root";//username you use to login to php my admin
+	$password = "";//password you use to login
+	
+	//CONNECTION OBJECT
+	//This Keeps the Connection to the Databade
+	$connect = new MySQLi($hostname, $username, $password, $dbname) or die('Can not connect to database')		
+
  // check if the form has been submitted. If it has, start to process the form and save it to the database
  if (isset($_POST['submit']))
  {
