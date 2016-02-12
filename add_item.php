@@ -13,13 +13,15 @@
 <body>
   <div id='cssmenu'>
     <ul>
-       <li><a href="add_user.php"><span>Add User</span></a></li>
-       <li class='active'><a href="add_item.php"><span>Add Item</span></a></li>
-       <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
-       <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
-       <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>
-       <li><a href="Update_Item.php"><span>Update Item</span></a></li>
-       <li class='last'><a href="delete.php"><span>Delete Item</span></a></li>
+      <li><a href="index_admin.php"><span>Main Menu</span></a></li>
+      <li><a href="add_user.php"><span>Add User</span></a></li>
+      <li class='active'><a href="add_item.php"><span>Add Item</span></a></li>
+      <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
+      <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
+      <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>
+      <li><a href="Update_Item.php"><span>Update Item</span></a></li>
+      <li><a href="delete.php"><span>Delete Item</span></a></li>
+      <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
     </ul>
   </div>
 
@@ -37,15 +39,15 @@
   <input type="reset" name="reset" value="Clear" style="margin-right:70px;">
 
   <?php
-  
+
 	$hostname = "localhost";//host name
 	$dbname = "pharmacy_inventory";//database name
 	$username = "root";//username you use to login to php my admin
 	$password = "";//password you use to login
-	
+
 	//CONNECTION OBJECT
 	//This Keeps the Connection to the Databade
-	$conn = mysqli_connect($servername, $username, $password, $dbname) or die('Can not connect to database')		
+	$conn = mysqli_connect($servername, $username, $password, $dbname) or die('Can not connect to database')
 
  // check if the form has been submitted. If it has, start to process the form and save it to the database
  if (isset($_POST['submit']))

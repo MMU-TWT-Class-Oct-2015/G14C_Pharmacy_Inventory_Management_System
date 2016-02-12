@@ -1,35 +1,37 @@
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>UserPinms</title>
-<?php
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>User Item Refund</title>
+    <link rel="stylesheet" type="text/css" href="stylingpage.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+</head>
+<!--
 <p>Welcome,$user_name</p>
-?><br><br>
+<br><br>
 <input type="button" name="l_item" value="List Item">
 <input type="button" name="S_item" value="Search Item">
 <input type="button" name="logout" value="Logout" >
-<br><br>
-</head>
-<style type="text/css">
-.size{width:480px;
-height:450px;}
-body{background-image:url('white-abstract-wave.jpg');
-}
-p{font-family: "Prototype";
-font-size: 30px;}
-h1{margin-top:150px;
-font-family:"Prototype";
-}
-h3{font-family:"Prototype";
-font-size:24px;}
-form{
-width:480px;
-height:450px;}
-input{margin-top:30px;}
-</style>
-<body>
+<br><br>-->
 
-Item Id:<br><input type="text" name="Item_Id"><input type="button" name="search" value="Search">
+
+<body>
+  <div id='cssmenu'>
+    <ul>
+       <li><a href="index_user.html"><span>Main Menu</span></a></li>
+       <li><a href="Item_list.php"><span>Search Item</span></a></li>
+       <li class='active'><a href="add_entry.php"><span>Item Refund</span></a></li>
+       <li><a href="Home.html"><span>Log Out</span></a></li>
+    </ul>
+  </div>
+<br><br>
+<p>Search Item</p>
+
+<p2>Please insert the ID of the refunded item</p2><br><input type="text" name="Item_Id"><input type="button" name="search" value="Search">
 <?php
 $connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
 mysql_select_db('pharmacy_inventory');
