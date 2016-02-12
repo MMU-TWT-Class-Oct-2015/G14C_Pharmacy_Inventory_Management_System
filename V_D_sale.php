@@ -11,6 +11,9 @@
     <script src="script.js"></script>
 </head>
 <body>
+  <h3 class="skm">
+  Pharmacy Inventory Management System
+  </h3>
   <div id='cssmenu'>
     <ul>
       <li><a href="index_admin.php"><span>Main Menu</span></a></li>
