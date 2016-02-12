@@ -29,7 +29,8 @@
     </ul>
   </div>
 <div class="center">
-  <br><br>
+  <p1>Delete Item</p1>
+  <br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
   <input type="button" name="logout" value="Logout" >

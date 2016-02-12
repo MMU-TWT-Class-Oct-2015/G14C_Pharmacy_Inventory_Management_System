@@ -29,16 +29,15 @@
     </ul>
   </div>
 <div class="center">
-  <h4>Welcome, ADMIN!</h4>
-  <p1>View Daily Sales</p1>
-  <br><br>
+  <p1>View Monthly Sales</p1>
+  <br>
   <input type="button" name="l_item" value="List Item">
   <input type="button" name="S_item" value="Search Item">
   <input type="button" name="logout" value="Logout" >
   <br><br>
   <form  method="post" >
   Date:
-  <input type="text" name="month_D" maxlength="2" size="2">/
+  <input type="text" name="month_D" maxlength="2" size="2"> /
   <input type="text" name="year_D" maxlength="4" size="4">
   <input type="button" name="submit_D_M" value="Search" style="margin-right:70px;">
 </div>
