@@ -42,10 +42,10 @@ $conn = mysqli_connect($servername, $username, $password, $dbname) or die ('Can 
 	while ($row = $result->fetch_assoc())
 
 
-  Name:<input type="text" name="name" value="<?php echo $row['name']; ?>">
+  Name:<input type="text" name="name" value="<?php echo $row['Item_Name']; ?>">
   Quantity:<input type="text" name="Quantity" value="<?php echo $row['Quantity']; ?>">
   Item ID:<input type="text" name="Item_ID" value="<?php echo $row['Item_ID']; ?>">
-  Price:<input type="text" name="Price" size="100" value="<?php echo $row['Price']; ?>">
+  Price:<input type="text" name="Price" size="100" value="<?php echo $row['Item_Price']; ?>">
   Description:<input type="text" name="Des" size="100" value="<?php echo $row['Description']; ?>">
   <input type="Submit" value="Update" name="Submit">
 ?>
