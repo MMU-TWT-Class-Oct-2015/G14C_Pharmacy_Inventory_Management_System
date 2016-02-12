@@ -28,10 +28,37 @@
   <input type="button" name="S_item" value="Search Item">
   <input type="button" name="logout" value="Logout" >
   <br><br>
-  <form  method="post" >
-  Item ID:
-  <input type="text" name="S_Item" maxlength="30" size="30">/
-  <input type="button" name="search_Item" value="Search" style="margin-right:70px;">
+  <form action="" method="post">
+  <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "pharmacy_inventory";
 
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname) or die ('Can not connect to database');
+
+
+	while ($row = $result->fetch_assoc())
+
+
+  Name:<input type="text" name="name" value="<?php echo $row['name']; ?>">
+  Quantity:<input type="text" name="Quantity" value="<?php echo $row['Quantity']; ?>">
+  Item ID:<input type="text" name="Item_ID" value="<?php echo $row['Item_ID']; ?>">
+  Price:<input type="text" name="Price" size="100" value="<?php echo $row['Price']; ?>">
+  Description:<input type="text" name="Des" size="100" value="<?php echo $row['Description']; ?>">
+  <input type="Submit" value="Update" name="Submit">
+?>
+</form>
+<?php
+	if(isset($_POST['Submit'])){//if the submit button is clicked
+
+	$update = $_POST['Item_ID'];
+
+	$query="UPDATE pharmacy_inventory SET Item_ID=$update where Item_ID = '".$Item_ID."'";
+
+	mysql_query($query) or die("Cannot update");//update or error
+	}
+?>
 </body>
 </html>
