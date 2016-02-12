@@ -52,17 +52,17 @@
  {
  // get form data, making sure it is valid
  $Item_ID = mysql_real_escape_string(htmlspecialchars($_POST['Item_ID']));
- $name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
+ $Item_Name = mysql_real_escape_string(htmlspecialchars($_POST['Item_Name']));
  $Quantity = mysql_real_escape_string(htmlspecialchars($_POST['Quantity']));
- $Price = mysql_real_escape_string(htmlspecialchars($_POST['Price']));
- $Des = mysql_real_escape_string(htmlspecialchars($_POST['Des']));
+ $Item_Price = mysql_real_escape_string(htmlspecialchars($_POST['Item_Price']));
+ $Description = mysql_real_escape_string(htmlspecialchars($_POST['Description']));
 
  // check to make sure both fields are entered
- if ($Item_ID == '' || $name == ''|| $Quantity == '' || $Price == ''|| $Des == '' )
+ if ($Item_ID == '' || $Item_Name == ''|| $Quantity == '' || $Item_Price == ''|| $Description == '' )
 
  {
  // save the data to the database
- mysql_query("INSERT pharmacy_inventory SET Item_ID='$Item_ID', name='$name', Quantity='$Quantity', Price='$Price', Des=' $Des'")
+ mysql_query("INSERT pharmacy_inventory SET Item_ID='$Item_ID', name='$Item_Name', Quantity='$Quantity', Item_Price='$Item_Price', Description=' $Description'")
  or die(mysql_error());
 
  // once saved, redirect back to the view page
