@@ -45,7 +45,7 @@
 	
 	//CONNECTION OBJECT
 	//This Keeps the Connection to the Databade
-	$connect = new MySQLi($hostname, $username, $password, $dbname) or die('Can not connect to database')		
+	$conn = mysqli_connect($servername, $username, $password, $dbname) or die('Can not connect to database')		
 
  // check if the form has been submitted. If it has, start to process the form and save it to the database
  if (isset($_POST['submit']))
