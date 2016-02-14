@@ -30,6 +30,14 @@ form  {width:480px;
        height:450px;}
 input {margin-top:30px;}
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+
 
  @import url(http://fonts.googleapis.com/css?family=Capriola);
  #cssmenu,

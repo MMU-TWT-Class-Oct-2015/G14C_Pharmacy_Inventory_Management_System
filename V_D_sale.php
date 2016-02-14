@@ -10,6 +10,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>
 </head>
+
 <body>
   <h3 class="skm">
   Pharmacy Inventory Management System
@@ -28,17 +29,67 @@
     </ul>
   </div>
 <div class="center">
-  <p1>View Daily Sales</p1>
-<br>
-  <input type="button" name="l_item" value="List Item">
-  <input type="button" name="S_item" value="Search Item">
-  <input type="button" name="logout" value="Logout" >
+  <p>View Daily Sales</p>
+
   <br><br>
   <form  method="post" >
   Date:  <input type="text" name="day_D" maxlength="2" size="2"> /
   <input type="text" name="month_D" maxlength="2" size="2"> /
   <input type="text" name="year_D" maxlength="4" size="4">
-  <input type="button" name="submit_D" value="Search" style="margin-right:70px;">
+  <input type="submit" name="submit_D" value="Search" style="margin-right:70px;">
+<?php
+error_reporting(E_ALL);
+session_start();
+include "conn.php";
+
+if (isset($_POST['submit_D']))
+{
+	// get form data, making sure it is valid
+
+	$day = $_POST['day_D'];
+	$month = $_POST['month_D'];
+	$year = $_POST['year_D'];
+
+	// save the data to the database
+	$query = "SELECT *
+  FROM `sales`
+  WHERE `day` = '$day' AND `month` = '$month' AND `year` = '$year'
+  ORDER BY `id_item`" ;
+ 
+	$result = mysqli_query($conn, $query);
+  if (mysqli_num_rows($result) > 0) {
+      echo "<table>
+  		<tr>
+    <th>Item ID</th>
+    <th>Item Sold</th>		
+    <th>Quantity Sold</th>
+    <th>Price</th> 		
+    <th>Day</th>
+    <th>Month</th>
+    <th>Year</th>
+  </tr>";
+      while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+      	
+      	echo "
+  
+  <tr>
+    <td>{$row['id_item']}</td>
+    <td>{$row['item_sold']}</td>		
+    <td>{$row['quantity_sold']}</td>
+    <td>{$row['price']}</td>
+    <td>{$row['day']}</td>
+    <td>{$row['month']}</td>
+    <td>{$row['year']}</td>
+  </tr>";
+      		
+      }
+      echo "</table>";
+    }
+      else {    echo "<br><br>Query didnt return any result";
+        }
+}
+ mysqli_close($conn)
+?>
 
 
 </form>
