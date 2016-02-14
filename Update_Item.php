@@ -19,7 +19,7 @@
     <ul>
       <li><a href="index_admin.php"><span>Main Menu</span></a></li>
       <li><a href="add_user.php"><span>Add User</span></a></li>
-      <li><a href="add_item.php"><span>Add Item</span></a></li>
+      <li><a href="Add_Item.html"><span>Add Item</span></a></li>
       <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
       <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
       <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>

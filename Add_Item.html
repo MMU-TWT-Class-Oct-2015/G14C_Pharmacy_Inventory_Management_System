@@ -32,39 +32,16 @@
   <div class="center">
 	<p>Add Item</p>
   <br>
-
-
-
-<?php
-error_reporting(E_ALL);
-session_start();
-include "conn.php";
  
-if (isset($_POST['submit']))
-{
-	// get form data, making sure it is valid
-
-	$item_name = $_POST['name'];
-	$item_price = $_POST['price'];
-	$quantity = $_POST['quantity'];
-	$des = $_POST['des'];
-
-	// save the data to the database
-	$query = "INSERT INTO `item_pinms` (`item_name`,`item_price`,`item_quantity`,`item_des`)
-	VALUES
-	('$item_name','$item_price','$quantity','$des')";
-
-	$result = mysqli_query($conn, $query);
-	if($result){
-		echo "Item Added";
-	}
-	else{  echo "Item Not Added";
-	}
-}
- mysqli_close($conn)
-?>
- 
+  <form action="add_item.php" method="POST">
+  
+  Name       :       <input type="text" name="name" maxlength="50" size="50"><br>
+  Price      :       <input type="text" name="price" maxlength="10" size="10"><br>
+  Quantity   :       <input type="text" name="quantity" maxlength="3" size="3"><br>
+  Description:       <input type="text" name="des" maxlength="100" size="100"><br>
+  <input type="submit" name="submit" value="Add" style="margin-right:70px;">
+  <input type="reset" name="reset" value="Clear" style="margin-right:70px;">
+ </form>
  </div>
 </body>
 </html>
- 
