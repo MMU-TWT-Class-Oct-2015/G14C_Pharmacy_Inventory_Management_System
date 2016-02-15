@@ -33,32 +33,11 @@
   </div>
   <div class="center">
     <br><br>
-    
-     <?php 
-error_reporting(E_ALL);
-session_start();
-include "conn.php";
-
-  if (isset($_POST['item_id']) && is_numeric($_POST['item_id']))
-    {
-    // get id value
-    $id = $_POST['item_id'];
-
-    // delete the entry
-    $query = "DELETE FROM `sales` WHERE id_item =$id";
-    
-    $query2 = "UPDATE `item_pinms` SET `item_quantity` + 1 WHERE `item_id`=$id  ";
-    
-    $result = mysqli_query($conn, $query);
-    $result2 = mysqli_query($conn, $query2);
-    if($result){
-    	echo "Item Updated";
-    }
-    else{  echo "Item Not Updated";
-    }
-    }
-    mysqli_close($conn);
-    ?>
-  </div>
-</body>
-</html>
+<p>Search Item</p>
+	<form action = "add_entry.php"method="post">	
+    Please insert the ID of the refunded item<br><input type="text" name="item_id">
+    <input type="submit" name="submit" value="Search">
+    </form>
+    </div>
+    </body>
+    </html>

@@ -30,36 +30,15 @@
   </div>
   <div class="center">
     <p>Add User</p>
-  <br>
-  <?php
-error_reporting(E_ALL);
-session_start();
-include "conn.php";
- 
-if (isset($_POST['submit']))
-{
-	// get form data, making sure it is valid
-
-	$staff_id = $_POST['sid'];
-	$name = $_POST['name'];
-	$pass= $_POST['pass'];
-	
-
-	// save the data to the database
-	$query = "INSERT INTO `user` (`user_name`,`staff_id`,`password`)
-	VALUES
-	('$staff_id','$name','$pass')";
-
-	$result = mysqli_query($conn, $query);
-	if($result){
-		echo "New User Added";
-	}
-	else{  echo "New User Not Added";
-	}
-}
- mysqli_close($conn);
-?>
   
+  <br><br>
+  <form  action="add_user.php" method="post" >
+  Staff ID:<input type="text" name="sid" maxlength="25" size="35"><br>
+  Name    :<input type="text" name="name" maxlength="25" size="35"><br>
+  Password:<input type="password" name="pass" maxlength="25" size="35"><br>
+  <input type="submit" name="submit" value="Create" style="margin-right:70px;">
+  <input type="reset" name="reset" value="Clear" style="margin-right:70px;">
+  </form>
   </div>
 </body>
 </html>

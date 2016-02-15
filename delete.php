@@ -18,48 +18,47 @@
   <div id='cssmenu'>
     <ul>
       <li><a href="index_admin.php"><span>Main Menu</span></a></li>
-      <li><a href="add_user.php"><span>Add User</span></a></li>
+      <li><a href="add_user.html"><span>Add User</span></a></li>
       <li><a href="Add_Item.html"><span>Add Item</span></a></li>
       <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
       <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
       <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>
-      <li><a href="Update_Item.php"><span>Update Item</span></a></li>
-      <li class='active'><a href="delete.php"><span>Delete Item</span></a></li>
-      <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
+      <li><a href="Update_Item.html"><span>Update Item</span></a></li>
+      <li class='active'><a href="delete.html"><span>Delete Item</span></a></li>
+      <li class='last'><a href="Home.php"><span>Log Out</span></a></li>
     </ul>
   </div>
 <div class="center">
-  <p1>Delete Item</p1>
-  <br>
-  <input type="button" name="l_item" value="List Item">
-  <input type="button" name="S_item" value="Search Item">
-  <input type="button" name="logout" value="Logout" >
+  
+
   <br><br>
-  <form method="get">
-  Item ID:
-  <input type="text" name="Item_ID" maxlength="30" size="30">
-  <input type="button" name="delete" value="Delete Item" style="margin-right:70px;">
-  </form>
-  <?php
-  $hostname = "localhost";//host name
-	$dbname = "pharmacy_inventory";//database name
-	$username = "root";//username you use to login to php my admin
-	$password = "";//password you use to login
+  <?php 
+error_reporting(E_ALL);
+session_start();
+include "conn.php";
 
-	//CONNECTION OBJECT
-	//This Keeps the Connection to the Databade
-	$connect = new MySQLi($hostname, $username, $password, $dbname) or die('Can not connect to database')
-
-  if (isset($_GET['Item_ID']) && is_numeric($_GET['Item_ID']))
+  if (isset($_POST['item_id']) && is_numeric($_POST['item_id']))
     {
     // get id value
-    $id = $_GET['Item_ID'];
+    $id = $_POST['item_id'];
 
     // delete the entry
-    $result = mysql_query("DELETE FROM pharmacy_inventory WHERE Item_ID=$id")
-    or die(mysql_error());
+    $query = "DELETE FROM `item_pinms` WHERE item_id =$id";
+    
+    $result = mysqli_query($conn, $query);
+    if($result){
+    	echo "Item Deleted";
+    }
+    else{  echo "Item Not Deleted";
+    }
+    }
+    mysqli_close($conn);
     ?>
+  
 </div>
 
 </body>
 </html>
+
+
+    

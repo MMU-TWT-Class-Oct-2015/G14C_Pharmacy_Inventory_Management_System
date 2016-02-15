@@ -18,55 +18,46 @@
   <div id='cssmenu'>
     <ul>
       <li><a href="index_admin.php"><span>Main Menu</span></a></li>
-      <li><a href="add_user.php"><span>Add User</span></a></li>
+      <li><a href="add_user.html"><span>Add User</span></a></li>
       <li><a href="Add_Item.html"><span>Add Item</span></a></li>
       <li><a href="V_D_sale.php"><span>Daily Sales</span></a></li>
       <li><a href="V_M_sale.php"><span>Monthly Sales</span></a></li>
       <li><a href="V_F_month.php"><span>Top Selling Item</span></a></li>
-      <li class='active'><a href="Update_Item.php"><span>Update Item</span></a></li>
-      <li><a href="delete.php"><span>Delete Item</span></a></li>
-      <li class='last'><a href="Home.html"><span>Log Out</span></a></li>
+      <li class='active'><a href="Update_Item.html"><span>Update Item</span></a></li>
+      <li><a href="delete.html"><span>Delete Item</span></a></li>
+      <li class='last'><a href="Home.php"><span>Log Out</span></a></li>
     </ul>
   </div>
   <div class="center">
-    <p1>Update Item</p1>
+    <p>Update Item</p>
   <br>
-  <input type="button" name="l_item" value="List Item">
-  <input type="button" name="S_item" value="Search Item">
-  <input type="button" name="logout" value="Logout" >
-  <br><br>
-  <form action="" method="post">
   <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "pharmacy_inventory";
+  error_reporting(E_ALL);
+  session_start();
+  include "conn.php";
+  
+	if(isset($_POST['submit'])){
+		//if the submit button is clicked
+		
+		$item_name = $_POST['name'];
+		$item_price = $_POST['price'];
+		$quantity = $_POST['quantity'];
+		$des = $_POST['des'];
+		$id = $_POST['item_id'];
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname) or die ('Can not connect to database');
+	$query="UPDATE `item_pinms` SET `item_name`='$item_name',`item_price` = '$item_price',`item_quantity` ='$quantity',`item_des` = '$des' 
+			WHERE `item_id` = '$id'";
 
-
-	while ($row = $result->fetch_assoc())
-
-
-  Name:<input type="text" name="name" value="<?php echo $row['Item_Name']; ?>">
-  Quantity:<input type="text" name="Quantity" value="<?php echo $row['Quantity']; ?>">
-  Item ID:<input type="text" name="Item_ID" value="<?php echo $row['Item_ID']; ?>">
-  Price:<input type="text" name="Price" size="100" value="<?php echo $row['Item_Price']; ?>">
-  Description:<input type="text" name="Des" size="100" value="<?php echo $row['Description']; ?>">
-  <input type="Submit" value="Update" name="Submit">
-?>
-</form>
-<?php
-	if(isset($_POST['Submit'])){//if the submit button is clicked
-
-	$update = $_POST['Item_ID'];
-
-	$query="UPDATE pharmacy_inventory SET Item_ID=$update where Item_ID = '".$Item_ID."'";
-
-	mysql_query($query) or die("Cannot update");//update or error
+	$result = mysqli_query($conn, $query);
+	if($result){
+		echo "Item have been Updated";
 	}
+	else{  echo "Item Not have been Updated";
+	}
+	}
+	mysqli_close($conn);
 ?>
+  
 </div>
 </body>
 </html>

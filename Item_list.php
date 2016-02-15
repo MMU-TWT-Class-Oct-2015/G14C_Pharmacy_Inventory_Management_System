@@ -24,31 +24,49 @@
     <ul>
        <li><a href="index_user.html"><span>Main Menu</span></a></li>
        <li class='active'><a href="Item_list.php"><span>Search Item</span></a></li>
-       <li><a href="add_entry.php"><span>Item Refund</span></a></li>
-       <li><a href="Home.html"><span>Log Out</span></a></li>
+       <li><a href="add_entry.html"><span>Item Refund</span></a></li>
+       <li><a href="Home.php"><span>Log Out</span></a></li>
     </ul>
   </div>
   <div class="center">
     <br><br>
     <p>Search Item</p>
     <div>
-      <?php
-      $connection = mysql_connect('localhost', 'root', ''); //The Blank string is the password
-      mysql_select_db('pharmacy_inventory');
+ 
+      <table>
+  <?php
+error_reporting(E_ALL);
+session_start();
+include "conn.php";
 
-      echo "<table>"; // start a table tag in the HTML
+$query = "SELECT *
+FROM `item_pinms`";
 
-      while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-        echo "<tr><td>" . $row['Item_Id'] . "</td><td>" . $row['Name'] . "</td><td>" . $row['Price'] . "</td><td>" . $row['Quantity'] . "</td><td>" . $row['Des'] . "</td></tr>";  //$row['index'] the index here is a field name
-      }
-      echo "</table>";
-      mysql_close();
-      ?>
+$result = mysqli_query($conn, $query);
+    
+     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+    {
+      print("<tr>");
+
+      foreach($row as $key => $value)
+        print("<td>$value</td>");
+
+      print("</tr>");
+    }
+  ?>
+  </table>
+  <div>
+  	   <form action = "Detail_L_Item.php" method="post" >
+      <p>Please insert the item code</p>
+      <input type="text" name="item_id"> 
+      <input type="submit" name="search" value="Confirm">
+    </form>
+    
+
+
     </div>
-    <div>
-      <p2>Please insert the item code</p2>
-      <input type="text" name="Item_Id"> <input type="button" name="search" value="Search">
     </div>
+   
   </div>
 </body>
 </html>
