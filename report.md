@@ -75,4 +75,34 @@ The system are still in early phase, some prototype have been develop to test ef
 *	Github
 
 
+# **Design Issues**
 
+*	The issues is admin need to key in day, month and year. Admin also can’t sign in as a staff with the same username and password that admin use to sign in as a admin. If admin want to sign in as a staff, admin need to create a new ID to sign in. Staff can’t sign as admin because only one person can control the system. It had something for the staff or users use this system when the design add item and add user just only finished with not satisfied notification. Staff also only have two option on the system.  
+
+
+# **Implementation**
+
+* Please refer to the printscreen folder.
+
+
+# **Contribution of the project**
+
+*	With the proposed system  inventory, the pharmacist will be able to monitor the movement of medicine with ease. It monitors the medicine movement out from  pharmacy. At any time, the pharmacist is able to find out the balance and the medicine’s movement  history. This will avoid under and over stocking of medicine in the pharmacy, thus lead to better inventory management and also cost management for the purchase of medicine.
+
+*	Compared to the current manual system, the implementation  of pharmacy system  inventory will reduces the time spent for paperwork, leading to concentration on improving pharmaceutical care of customers, especially emphasis on customers counseling and customer medication monitoring. It will be greatly embraced by the pharmacy profession as it is one giant leap towards pharmaceutical care of customer.
+
+
+# **Evaluation**
+
+*	The system is not considered a 100% successful project. The lacks of security for the system still can be improve in the future to increase the efficiency. The database still need a lot of touch up to maintain data accuracy. 
+
+
+# **Conclusion**
+
+* Today, most of the pharmacy management system in Malaysia is using file system or it’s called manual system reports. Some changes need to be done to help them manage their inventory with more effective. A computerized system is the best solution. By changing to this technology, pharmacy is hoped will be able to adapt to current requirement that increase from day by day.
+
+
+# **Appendices**
+
+a)	Sample interface screen         
+b)	Sample input/output screens
